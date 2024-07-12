@@ -23,11 +23,13 @@
                 border-radius: 50%;
                 width: 50px;
                 height: 50px;
+                display: none; /* Hidden by default */
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 text-decoration: none;
                 font-size: 24px; /* Font size for fallback icon */
+                transition: opacity 0.3s ease; /* Smooth transition */
             }
         </style>
     </head>
@@ -151,6 +153,32 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script>
+            $(document).ready(function() {
+                var scrollButton = $('.scroll-up');
 
+                // Show or hide the scroll button based on scroll position
+                $(window).scroll(function() {
+                    // Calculate the position to show the button (e.g., 20% from the bottom)
+                    var scrollDistance = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    var bodyHeight = $(document).height();
+                    var positionToShow = bodyHeight - windowHeight - (windowHeight * 0.2);
+
+                    if (scrollDistance > positionToShow) {
+                        scrollButton.fadeIn();
+                    } else {
+                        scrollButton.fadeOut();
+                    }
+                });
+
+                // Animate the scroll to top
+                scrollButton.click(function() {
+                    $('html, body').animate({scrollTop: 0}, 800);
+                    return false;
+                });
+            });
+        </script>
     </body>
 </html>
