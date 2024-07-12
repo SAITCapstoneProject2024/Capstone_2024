@@ -38,10 +38,13 @@
                 <div class="image main"><img src="images/pic01.jpg" alt="" /></div>
                 
                 <!-- Embedded Power BI Report -->
-				<iframe title="GHG_Emission_Dashboard_3" width="100%" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiNGEwMmRlOTgtNmE4MS00NDYwLWI3ZjEtYzg5YWI1Nzk4NTRhIiwidCI6ImY1MmYyMTgzLTlmNjctNGFkMi1iNjU2LTZmNzU0ZmUxOTZjYiIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
-				</section>
+                <iframe title="GHG_Emission_Dashboard_3" width="100%" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiNGEwMmRlOTgtNmE4MS00NDYwLWI3ZjEtYzg5YWI1Nzk4NTRhIiwidCI6ImY1MmYyMTgzLTlmNjctNGFkMi1iNjU2LTZmNzU0ZmUxOTZjYiIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
+            </section>
 
         </div>
+
+        <!-- Scroll Up -->
+        <a href="#header" class="scroll-up"><i class="fas fa-arrow-up"></i></a>
 
         <!-- Copyright -->
         <div id="copyright">
@@ -56,6 +59,49 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        .scroll-up {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            background-color: #555;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Make it circular */
+            display: none; /* Hidden by default */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .scroll-up:hover {
+            background-color: #333;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            var scrollButton = $('.scroll-up');
 
+            // Show or hide the scroll button
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 20) {
+                    scrollButton.fadeIn();
+                } else {
+                    scrollButton.fadeOut();
+                }
+            });
+
+            // Animate the scroll to top
+            scrollButton.click(function() {
+                $('html, body').animate({scrollTop: 0}, 800);
+                return false;
+            });
+        });
+    </script>
 </body>
 </html>
