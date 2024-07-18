@@ -28,6 +28,9 @@
                 align-items: center;
                 text-decoration: none;
             }
+            .scroll-up:hover {
+                background: #555;
+            }
         </style>
     </head>
     <body class="is-preload">
@@ -45,6 +48,7 @@
                 <ul class="links">
                     <li><a href="index.html">OVERVIEW</a></li>
                     <li><a href="methodology.html">METHODOLOGY</a></li>
+                    <li><a href="dataexploration.html">DATA EXPLORATION</a></li>
                     <li><a href="results.html">RESULTS</a></li>
                     <li class="active"><a href="recommendations.html">RECOMMENDATIONS</a></li>
                 </ul>
@@ -58,8 +62,6 @@
                     <header class="major">
                         <h1>RECOMMENDATIONS</h1>
                     </header>
-                    <div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-                    
                     <p><strong>Actionable Insights</strong></p>
                     <ul>
                         <li><strong>Sector-Specific Emission Reduction Strategies</strong>
@@ -120,12 +122,12 @@
 
             </div>
 
+            <!-- Scroll Up -->
+            <a href="#header" class="scroll-up"><i class="fas fa-arrow-up"></i></a>
+
             <!-- Copyright -->
             <div id="copyright">
             </div>
-
-            <!-- Scroll Up -->
-            <a href="#header" class="scroll-up"><i class="fas fa-arrow-up"></i></a>
 
         </div>
         
@@ -137,6 +139,25 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+        <script>
+            $(document).ready(function() {
+                var scrollButton = $('.scroll-up');
 
+                // Show or hide the scroll button
+                $(window).scroll(function() {
+                    if ($(this).scrollTop() > 20) {
+                        scrollButton.fadeIn();
+                    } else {
+                        scrollButton.fadeOut();
+                    }
+                });
+
+                // Animate the scroll to top
+                scrollButton.click(function() {
+                    $('html, body').animate({scrollTop: 0}, 800);
+                    return false;
+                });
+            });
+        </script>
     </body>
 </html>
