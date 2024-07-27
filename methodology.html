@@ -64,74 +64,122 @@
                         <h1>METHODOLOGY</h1>
                     </header>
                     <p>
-                        <strong>Data Collection</strong>
+                        Our data for the GHG Emission Case Study was obtained from <strong>Climate TRACE</strong>, a platform that leverages satellite imagery, remote sensing, and advanced machine learning algorithms to accurately estimate emissions. Below are the specifics of our data collection process:
                     </p>
-                    <ul>
-                        <li>Data was obtained from Climate TRACE that utilizes satellite imagery, remote sensing, and advanced machine learning algorithms to estimate emissions accurately.</li>
-                        <li>Historical emissions data was downloaded from the Climate TRACE website. The data spans several years, providing a comprehensive view of emissions trends over time.</li>
-                        <li>No specific sampling technique was required as the dataset covered comprehensive emissions data across all sectors and regions.</li>
-                    </ul>
-
+                
+                    <h2>Data Sources</h2>
                     <p>
-                        <strong>Data Preprocessing</strong>
+                        <strong>Climate TRACE</strong> (URL: <a href="https://climatetrace.org/data" target="_blank">https://climatetrace.org/data</a>). The emissions data from Climate TRACE are freely available for download and accessible via API.
                     </p>
-                    <ul>
-                        <li>Missing values were handled through imputation techniques.</li>
-                        <li>Duplicates were removed to ensure data integrity.</li>
-                        <li>Emission data was transformed to ensure a uniform format.</li>
-                        <li>Data normalization was performed to ensure consistency and comparability across different sectors and regions.</li>
-                    </ul>
-
+                
+                    <h2>Data Content</h2>
                     <p>
-                        <strong>Analysis Techniques</strong>
+                        The downloaded data packages include:
                     </p>
                     <ul>
-                        <li><strong>Statistical Analysis:</strong>
-                            <ul>
-                                <li>Descriptive statistics were calculated to summarize the central tendency, dispersion, and distribution of emissions data across different sectors and regions.</li>
-                                <li>Correlation analysis was performed to identify relationships between emissions and potential influencing factors such as economic activity, energy consumption, and population density.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Machine Learning Models:</strong>
-                            <ul>
-                                <li>Regression Analysis: Linear and multiple regression models were used to predict emissions based on historical data and other influencing factors. These models helped in understanding the key drivers of emissions.</li>
-                                <li>Time Series Analysis: Time series models, such as ARIMA (AutoRegressive Integrated Moving Average), were employed to forecast future emissions. These models accounted for temporal dependencies and trends in the data.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Clustering Analysis:</strong>
-                            <ul>
-                                <li>Clustering techniques, such as K-means clustering, were used to categorize regions and sectors with similar emission patterns. This helped in identifying regions or sectors that required similar mitigation strategies.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Anomaly Detection:</strong>
-                            <ul>
-                                <li>Techniques like Isolation Forest were used to detect anomalies in the emission data, which could indicate data quality issues or unusual emission events.</li>
-                            </ul>
-                        </li>
+                        <li>CSV files detailing annual country-level emissions by subsector and greenhouse gas for the years 2015-2022.</li>
+                        <li>Source-level emissions by subsector and greenhouse gas.</li>
+                        <li>Information on emissions source ownership.</li>
+                        <li>Confidence data when available.</li>
                     </ul>
-
+                
+                    <h2>Public API Beta</h2>
                     <p>
-                        <strong>Tools and Technologies</strong>
+                        For data scientists and expert users familiar with programmatically interacting with databases, the <strong>Climate TRACE API</strong> (URL: <a href="https://api.climatetrace.org/v4/" target="_blank">https://api.climatetrace.org/v4/</a>) is available in beta. The API allows for:
                     </p>
                     <ul>
-                        <li><strong>Software:</strong>
+                        <li>Searching emitting assets by sector, owner, and location.</li>
+                        <li>Querying emissions and other asset details.</li>
+                        <li>Looking up aggregated emissions by countries.</li>
+                    </ul>
+                
+                    <h2>Sampling Techniques</h2>
+                    <p>
+                        No specific sampling technique was needed as the dataset encompasses comprehensive emissions data across all sectors and regions.
+                    </p>
+                
+                    <h2>Data Preprocessing</h2>
+                    <p>
+                        Data preprocessing involved several steps to clean and prepare the data for analysis, utilizing both Power BI and Python to ensure data integrity and consistency.
+                    </p>
+                
+                    <h3>Using Power BI and Power Query Transformation</h3>
+                    <ul>
+                        <li><strong>Handling Missing Values:</strong> Missing values were managed using imputation techniques within the Power Query Editor, ensuring a complete dataset for analysis.</li>
+                        <li><strong>Removing Duplicates:</strong> Duplicates were identified and removed to maintain data integrity. Primary keys were created to uniquely identify each record, further ensuring the integrity of the dataset.</li>
+                        <li><strong>Dropping Unnecessary Features:</strong> Columns that were not needed for analysis were dropped. This step was essential to streamline the dataset, reduce complexity, and improve processing efficiency.</li>
+                        <li><strong>Data Normalization:</strong> Data normalization was performed to standardize data, ensuring consistency and comparability across different sectors and regions.</li>
+                        <li><strong>Data Modeling:</strong> Relational models were created and linked for each of the fact and dimension tables. This involved defining relationships and hierarchies to facilitate robust data analysis within Power BI.</li>
+                    </ul>
+                
+                    <h3>Using Python and VS Code Programming</h3>
+                    <ul>
+                        <li><strong>Dropping Unnecessary Features:</strong> Unneeded columns were dropped to streamline the dataset, reduce complexity, and enhance processing efficiency.</li>
+                        <li><strong>Data Transformation:</strong> Emission data was transformed to ensure a uniform format, enabling consistent analysis across the dataset.</li>
+                        <li><strong>Data Normalization:</strong> Data normalization was conducted to ensure consistency and comparability across different sectors and regions, standardizing the data for effective analysis.</li>
+                    </ul>
+                
+                    <h2>Analysis Techniques</h2>
+                    <p>
+                        In any comprehensive study, especially one focused on complex topics like GHG emissions, the methodology used to analyze data is crucial. Analysis techniques refer to the various methods and tools employed to examine, interpret, and draw insights from data. These techniques help in understanding patterns, trends, and relationships within the data, ultimately guiding decision-making and strategy development.
+                    </p>
+                
+                    <h3>Statistical / Descriptive Analysis</h3>
+                    <ul>
+                        <li><strong>Descriptive Statistics:</strong> We calculated summary statistics to understand the distribution of GHG emissions data across different sectors and regions. This involved determining central tendencies (mean, median) and variability (standard deviation) in emissions levels, helping us grasp the overall emission patterns and differences between sectors and regions.</li>
+                        <li><strong>Correlation Analysis:</strong> We performed correlation analysis to explore the relationships between GHG emissions and various influencing factors. This analysis aimed to identify potential predictors of emissions and understand how these factors are interrelated, providing insights into the drivers behind emission levels.</li>
+                    </ul>
+                
+                    <h3>Machine Learning Models</h3>
+                    <ul>
+                        <li><strong>Time Series Analysis: Exponential Smoothing</strong>
                             <ul>
-                                <li>Python: Python was the primary programming language used for data analysis and modeling.</li>
-                                <li>Excel: Microsoft Excel was used for initial data exploration, summary statistics, and visualization.</li>
+                                <li><strong>Description:</strong> Exponential Smoothing is a forecasting method that applies weighted averages of past observations, with more recent data given higher weight. This technique smooths out fluctuations and emphasizes recent trends.</li>
+                                <li><strong>Application:</strong> For our GHG emissions data, Exponential Smoothing helps forecast future emission levels by accounting for historical trends and patterns. It is particularly useful for generating accurate forecasts by smoothing out short-term fluctuations and focusing on underlying trends in emissions from 2015 to 2022.</li>
                             </ul>
                         </li>
-                        <li><strong>Libraries and Packages:</strong>
+                        <li><strong>Forecasting: Prophet</strong>
                             <ul>
-                                <li>Pandas: Used for data manipulation and analysis. Pandas provided data structures and functions needed to clean and preprocess the data.</li>
-                                <li>NumPy: Used for numerical operations and handling arrays.</li>
-                                <li>Scikit-learn: Employed for implementing machine learning models, including regression and clustering algorithms. Scikit-learn also provided tools for model evaluation and selection.</li>
-                                <li>Statsmodels: Utilized for time series analysis and regression modeling, providing comprehensive statistical models.</li>
-                                <li>Matplotlib and Seaborn: Used for data visualization. Matplotlib provided a flexible framework for creating static, animated, and interactive visualizations, while Seaborn offered a high-level interface for drawing attractive and informative statistical graphics.</li>
-                                <li>Jupyter Notebook: Used as an interactive computing environment to write and run code, visualize data, and document the analysis process.</li>
+                                <li><strong>Description:</strong> Prophet is a forecasting tool designed to handle time series data with strong seasonal effects and multiple seasons of historical data. It can manage missing data, outliers, and incorporate events like holidays into its forecasts.</li>
+                                <li><strong>Application:</strong> Prophet is well-suited for forecasting GHG emissions in our case study because it can model complex seasonal patterns and long-term trends in emissions data. By leveraging historical data from 2015 to 2022, Prophet provides robust forecasts that account for seasonality and trends, helping us predict future emissions and guide long-term planning and policymaking.</li>
                             </ul>
                         </li>
                     </ul>
-
+                
+                    <p>
+                        These methods and techniques collectively enable a thorough analysis of GHG emissions trends and forecasting, offering valuable insights for understanding past emissions and planning for future reductions.
+                    </p>
+                
+                    <h2>Sample Statistical Summary</h2>
+                
+                    <h2>Tools and Technologies</h2>
+                    <p>
+                        In our Case Study on GHG Emissions, we employed a variety of software, programming languages, and tools to analyze data, create dashboards, and develop visualizations. Each tool played a crucial role in different stages of the project.
+                    </p>
+                
+                    <h3>Software</h3>
+                    <ul>
+                        <li><strong>Python:</strong> Python was the primary programming language used for data analysis and modeling. Its versatility, ease of learning, and extensive libraries made it ideal for processing data, building machine learning models, and conducting statistical analyses. Python’s support for a wide range of libraries and packages facilitated complex analyses and predictions.</li>
+                        <li><strong>VS Code:</strong> Visual Studio Code (VS Code) was used to run our Python scripts and codes. As a powerful code editor, VS Code provides features like debugging, syntax highlighting, and version control integration, which streamlined the development process and enhanced productivity.</li>
+                        <li>We also used VS Code for our landing page uploaded on GitHub.</li>
+                        <li><strong>Power BI:</strong> Power BI was used for creating our primary visualizations and dashboards. It allowed us to design interactive and visually appealing dashboards that effectively communicate insights from the data, making it easier to present findings and support decision-making.</li>
+                        <li><strong>MS Excel:</strong> Microsoft Excel was employed for initial data exploration, summary statistics, and basic visualizations. Excel’s user-friendly interface and built-in functions facilitated preliminary data analysis and quick insights, serving as a foundation before moving to more advanced tools.</li>
+                        <li><strong>GitHub:</strong> GitHub was used for version control and collaboration on our project. It facilitated the management of our codebase, enabling multiple contributors to work on the project simultaneously while tracking changes and maintaining a history of revisions. Additionally, GitHub hosted our landing page, allowing us to present our findings effectively.</li>
+                    </ul>
+                
+                    <h3>Libraries and Packages</h3>
+                    <ul>
+                        <li><strong>Pandas:</strong> Essential for data manipulation and analysis, Pandas provided the data structures and functions needed to clean, preprocess, and analyze the emissions data efficiently.</li>
+                        <li><strong>NumPy:</strong> Utilized for numerical operations and handling arrays, NumPy supported mathematical calculations and data processing tasks crucial for our analysis.</li>
+                        <li><strong>Prophet:</strong> A forecasting library designed to handle time series data with seasonal effects. Prophet enabled us to make accurate predictions of future GHG emissions based on historical data.</li>
+                        <li><strong>Seaborn:</strong> Used for creating attractive and informative statistical graphics, Seaborn enhanced our visualizations with its high-level interface for complex plotting.</li>
+                        <li><strong>Scipy:</strong> Employed for scientific and technical computing, Scipy provided additional functions for optimization, integration, and statistical analysis, complementing our analysis efforts.</li>
+                        <li><strong>Scikit-learn:</strong> Implemented for machine learning models, including regression and clustering algorithms. Scikit-learn offered tools for model evaluation and selection, supporting our predictive and analytical tasks.</li>
+                        <li><strong>Statsmodels:</strong> Utilized for in-depth time series analysis and regression modeling, Statsmodels provided comprehensive statistical models and tests, enriching our analytical capabilities.</li>
+                        <li><strong>Matplotlib:</strong> Used for data visualization, Matplotlib offered a flexible framework for creating static, animated, and interactive plots, enabling detailed and customizable visual representations of our data.</li>
+                        <li><strong>Holt-Winters:</strong> Used for time series forecasting, Holt-Winters provides methods for capturing trends and seasonal patterns in the data, aiding in the prediction of future emissions based on historical trends.</li>
+                        <li><strong>Jupyter Notebook:</strong> Served as an interactive computing environment, allowing us to write and run code, visualize data, and document the analysis process in a single platform.</li>
+                    </ul>
                 </section>
 
             </div>
