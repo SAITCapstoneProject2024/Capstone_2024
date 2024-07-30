@@ -6,6 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Set width to 80% of the viewport */
+            max-width: 800px; /* Maximum width of the modal */
+            max-height: 80%;
+            overflow-y: auto; /* Scrollable if the content is too long */
+            font-size: 14px; /* Smaller font size */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .scroll-up {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            background-color: #555;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Make it circular */
+            display: none; /* Hidden by default */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .scroll-up:hover {
+            background-color: #333;
+        }
+
+        /* How to Use Style */
+        #howToUse {
+            font-size: 12px; /* Smaller font size */
+            margin-bottom: 10px; /* Space below the text */
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -36,11 +104,81 @@
             <section class="post">
                 <header class="major">
                     <h1>OUR DASHBOARD</h1>
-                </header>             
+                </header>
+                
+                <!-- How to Use Section -->
+                <div id="howToUse">
+                    <button id="howToUseBtn">How to Use</button>
+                </div>
+                
                 <!-- Embedded Power BI Report -->
                 <iframe title="GHG_Emission_Dashboard_V2" width="100%" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZDRhNjEyODEtMWI5Yy00OTQ1LWI5YjEtZjgzYTkyZjRiOGJmIiwidCI6ImY1MmYyMTgzLTlmNjctNGFkMi1iNjU2LTZmNzU0ZmUxOTZjYiIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
             </section>
 
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>User Guide for Power BI Dashboard</h2>
+                <h3>Overview</h3>
+                <p>Welcome to the Sectoral Analysis and Forecast of Global Greenhouse Gas (GHG) Emissions Dashboard. This guide will help you navigate and utilize the features of the dashboard to explore and analyze GHG emissions data.</p>
+                <h3>Page 1: Emissions Overview</h3>
+                <h4>Header Section:</h4>
+                <ul>
+                    <li>Dashboard Title: Displays the title "Sectoral Analysis and Forecast of Global Greenhouse Gas (GHG) Emissions Dashboard".</li>
+                    <li>GHG Type Toggle: Allows users to switch between different GHG types such as CH4 (Methane), CO2 (Carbon Dioxide), N2O (Nitrous Oxide), CO2e_20YR, and CO2e_100YR.</li>
+                </ul>
+                <h4>Overall Emission Count:</h4>
+                <p>Shows the total GHG emission count (in billion tonnes) for the selected GHG type.</p>
+                <h4>Total Emission by Sector, Subsector:</h4>
+                <p>A hierarchical view displaying GHG emissions broken down by sector and subsector. Users can see detailed emissions for specific sectors like power, manufacturing, transportation, etc.</p>
+                <p>Users can hover over a sector of subsector to see specific emission values.</p>
+                <h4>Total Emission Count by Country:</h4>
+                <p>A world map visualization showing GHG emission counts by country. Larger red circles represent higher emissions.</p>
+                <p>Users can hover over a country to see specific emission values.</p>
+                <h4>GHG Emission per Country:</h4>
+                <p>A table listing countries with their respective total emissions and trends.</p>
+                <ul>
+                    <li>Country: Name of the country.</li>
+                    <li>Total Emissions: Total GHG emissions (in billions).</li>
+                    <li>Emission Trend: Visual representation of the emission trend over time.</li>
+                </ul>
+                <h4>GHG Emission Trend and Forecast:</h4>
+                <p>A line chart displaying historical GHG emissions from 2014 to 2023 and forecasted emissions from 2024 to 2028.</p>
+                <p>Users can see the emission trends and the forecasted trajectory.</p>
+                <h3>How to Use Page 1</h3>
+                <h4>Navigating the Dashboard:</h4>
+                <ul>
+                    <li>Use the navigation arrows at the bottom of the dashboard to switch between different views or pages.</li>
+                    <li>Click on the GHG type buttons (CH4, CO2, N2O, CO2e_20YR, CO2e_100YR) to change the emission type displayed across the dashboard.</li>
+                </ul>
+                <h4>Interacting with Visualizations:</h4>
+                <ul>
+                    <li>Map Visualization: Hover over the circles on the map to see detailed emission information for each country.</li>
+                    <li>Table Visualization: Scroll through the table to compare emissions across different countries. Hover over the trend lines to see detailed emission changes.</li>
+                    <li>Line Chart: Hover over the data points on the line chart to see specific emission values for each year.</li>
+                </ul>
+                <h4>Filtering Data:</h4>
+                <p>Use the sector and subsector tree on the right side to filter emissions data by specific sectors. Clicking on a sector or subsector will update the other visualizations to reflect the selected category.</p>
+                <h3>Page 2: Emissions by Source</h3>
+                <h4>Source Emission Count:</h4>
+                <p>Displays total GHG emissions by different gas type.</p>
+                <h4>Source Emission Trend:</h4>
+                <p>A line chart showing the trend of emissions by source over the years.</p>
+                <h4>Emission Contribution by Source:</h4>
+                <p>A table illustrating the contribution of each source to the total GHG emissions.</p>
+                <h3>How to Use Page 2</h3>
+                <h4>Analyzing Source Emissions:</h4>
+                <ul>
+                    <li>Use the source emission count to understand the major contributors to GHG emissions.</li>
+                    <li>Observe the emission trend line chart to see how emissions from different sources have changed over time.</li>
+                    <li>Compare contributions from each source using the table for insights into which sources have the highest emissions.</li>
+                </ul>
+                <h3>Final Notes:</h3>
+                <p>This dashboard is designed to provide an interactive experience for users looking to analyze GHG emissions data. If you have any questions or need further assistance, feel free to reach out.</p>
+            </div>
         </div>
 
         <!-- Scroll Up -->
@@ -60,29 +198,6 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <style>
-        .scroll-up {
-            position: fixed;
-            bottom: 20px;
-            right: 30px;
-            z-index: 99;
-            background-color: #555;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%; /* Make it circular */
-            display: none; /* Hidden by default */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-        }
-        .scroll-up:hover {
-            background-color: #333;
-        }
-    </style>
     <script>
         $(document).ready(function() {
             var scrollButton = $('.scroll-up');
@@ -100,6 +215,32 @@
             scrollButton.click(function() {
                 $('html, body').animate({scrollTop: 0}, 800);
                 return false;
+            });
+
+            // Get the modal
+            var modal = $('#myModal');
+
+            // Get the button that opens the modal
+            var btn = $('#howToUseBtn');
+
+            // Get the <span> element that closes the modal
+            var span = $('.close');
+
+            // When the user clicks the button, open the modal 
+            btn.click(function() {
+                modal.show();
+            });
+
+            // When the user clicks on <span> (x), close the modal
+            span.click(function() {
+                modal.hide();
+            });
+
+            // When the user clicks anywhere outside of the modal, close it
+            $(window).click(function(event) {
+                if (event.target == modal[0]) {
+                    modal.hide();
+                }
             });
         });
     </script>
