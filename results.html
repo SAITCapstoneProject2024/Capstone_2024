@@ -105,13 +105,14 @@
                 <header class="major">
                 </header>
                 
-                <!-- How to Use Section -->
-                <div id="howToUse">
-                    <button id="howToUseBtn">How to Use</button>
-                </div>
                 
                 <!-- Embedded Power BI Report -->
                 <iframe title="GHG_Emission_Dashboard_Final" width="100%" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiNDk3ODZmNTUtZWY4Zi00NzZhLTllYjEtOGFkY2ZjYTJkYjNjIiwidCI6ImY1MmYyMTgzLTlmNjctNGFkMi1iNjU2LTZmNzU0ZmUxOTZjYiIsImMiOjZ9&pageName=afa2d8e431277424fb7b" frameborder="0" allowFullScreen="true"></iframe>
+            <!-- How to Use Button -->
+            <button id="howToUseBtn" class="action-button">How to Use</button>
+            <!-- Provide Feedback Button -->
+            <button id="provideFeedbackBtn" class="action-button">Provide Feedback</button>
+        
             </section>
 
         </div>
@@ -121,63 +122,133 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h2>User Guide for Power BI Dashboard</h2>
-                <h3>Overview</h3>
+
+                <h2>Overview</h2>
                 <p>Welcome to the Sectoral Analysis and Forecast of Global Greenhouse Gas (GHG) Emissions Dashboard. This guide will help you navigate and utilize the features of the dashboard to explore and analyze GHG emissions data.</p>
-                <h3>Page 1: Emissions Overview</h3>
-                <h4>Header Section:</h4>
+            
+                <div class="section-title">
+                    <h2>Main Dashboard</h2>
+                </div>
+            
+                <h3>Header Section:</h3>
                 <ul>
-                    <li>Dashboard Title: Displays the title "Sectoral Analysis and Forecast of Global Greenhouse Gas (GHG) Emissions Dashboard".</li>
-                    <li>GHG Type Toggle: Allows users to switch between different GHG types such as CH4 (Methane), CO2 (Carbon Dioxide), N2O (Nitrous Oxide), CO2e_20YR, and CO2e_100YR.</li>
+                    <li><strong>Dashboard Title:</strong> Displays the title "Sectoral Analysis and Forecast of Global Greenhouse Gas (GHG) Emissions Dashboard".</li>
+                    <li><strong>Overall Emission Count:</strong> Shows the total GHG emission count (in billion tonnes) for the selected gas type.</li>
+                    <li><strong>Gas Type Toggle:</strong> Allows users to switch between different GHG types such as CH4 (Methane), CO2 (Carbon Dioxide), N2O (Nitrous Oxide), CO2e_20YR (GWP), and CO2e_100YR (GWP).</li>
+                    <li><strong>Gas Type Focus:</strong> Allows users to select specific gas type of focus (e.g. Co2, N2O, CH4, or Global Warming Potential (GWP) CO2e_100YR or CO2e_20YR).</li>
+                    <li><strong>Country Marquee Ranking:</strong> Under the Dashboard title shows a marquee displaying the list of contributing countries and their respective ranks based on total GHG Emissions count and its percentage over the overall sum of GHG Emission total.</li>
                 </ul>
-                <h4>Overall Emission Count:</h4>
-                <p>Shows the total GHG emission count (in billion tonnes) for the selected GHG type.</p>
+            
+                <h3>Visualization Section:</h3>
+                <h4>GHG Emission by Country:</h4>
+                <ul>
+                    <li>A world map visualization showing GHG emission counts by country. Larger red circles represent higher emissions.</li>
+                    <li>To view more details, users can drill through selected country emission bubble to switch over to ‘Country Specific Greenhouse Gas (GHG) Emission Dashboard.’ Details of this dashboard will be discussed in the following sections.</li>
+                </ul>
+            
+                <h4>Country Ranking by GHG Emission Contributions:</h4>
+                <ul>
+                    <li>A table listing all the countries with their respective total emissions and trends.</li>
+                    <li><strong>Columns:</strong>
+                        <ul>
+                            <li><strong>Country:</strong> Name of the country.</li>
+                            <li><strong>Total Emissions:</strong> Total GHG emissions (in billions).</li>
+                            <li><strong>Emission Trend:</strong> Visual representation of the emission trend over time.</li>
+                        </ul>
+                    </li>
+                </ul>
+            
                 <h4>Total Emission by Sector, Subsector:</h4>
-                <p>A hierarchical view displaying GHG emissions broken down by sector and subsector. Users can see detailed emissions for specific sectors like power, manufacturing, transportation, etc.</p>
-                <p>Users can hover over a sector of subsector to see specific emission values.</p>
-                <h4>Total Emission Count by Country:</h4>
-                <p>A world map visualization showing GHG emission counts by country. Larger red circles represent higher emissions.</p>
-                <p>Users can hover over a country to see specific emission values.</p>
-                <h4>GHG Emission per Country:</h4>
-                <p>A table listing countries with their respective total emissions and trends.</p>
                 <ul>
-                    <li>Country: Name of the country.</li>
-                    <li>Total Emissions: Total GHG emissions (in billions).</li>
-                    <li>Emission Trend: Visual representation of the emission trend over time.</li>
+                    <li>A hierarchical view displaying GHG emissions broken down by sector and subsector. Users can see detailed emissions for specific sectors like power, manufacturing, transportation, etc.</li>
+                    <li>More details are shown via tooltip on the highlighted sector such as yearly trend from 2015-2022, gas type selection, total emission count for the sector, and breakdown of subsector with their total emission count contribution.</li>
                 </ul>
+            
                 <h4>GHG Emission Trend and Forecast:</h4>
-                <p>A line chart displaying historical GHG emissions from 2014 to 2023 and forecasted emissions from 2024 to 2028.</p>
-                <p>Users can see the emission trends and the forecasted trajectory.</p>
-                <h3>How to Use Page 1</h3>
-                <h4>Navigating the Dashboard:</h4>
                 <ul>
-                    <li>Use the navigation arrows at the bottom of the dashboard to switch between different views or pages.</li>
-                    <li>Click on the GHG type buttons (CH4, CO2, N2O, CO2e_20YR, CO2e_100YR) to change the emission type displayed across the dashboard.</li>
+                    <li>A line chart displaying historical GHG emissions from 2015 to 2022 and the forecasted emissions count until 2030.</li>
+                    <li>Users can see the historical emission trend and the forecasted trajectory in the near future. Moreover, hovering on each of the yearly data points in the past will show insights of the Top 5 countries contributing to the increase of GHG into the atmosphere.</li>
+                    <li>A Trend&Forecast button (A graph with a question mark) on the top left corner of the visualization is available for users to switch over to the Trend & Forecast of Global Greenhouse Gas (GHG) Emissions Dashboard. More details on this dashboard will be highlighted in the next sections.</li>
                 </ul>
-                <h4>Interacting with Visualizations:</h4>
+            
+                <div class="section-title">
+                    <h2>Country Specific Greenhouse Gas (GHG) Emissions Dashboard</h2>
+                </div>
+            
+                <h3>Header Section:</h3>
                 <ul>
-                    <li>Map Visualization: Hover over the circles on the map to see detailed emission information for each country.</li>
-                    <li>Table Visualization: Scroll through the table to compare emissions across different countries. Hover over the trend lines to see detailed emission changes.</li>
-                    <li>Line Chart: Hover over the data points on the line chart to see specific emission values for each year.</li>
+                    <li><strong>Dashboard Title:</strong> Displays the title "Country Specific Greenhouse Gas (GHG) Emissions Dashboard". Accessible via drill through from the main dashboard, map visuals.</li>
+                    <li><strong>Country of Focus:</strong> A visual card that shows the selected country focus from the map visuals in the main dashboard.</li>
+                    <li><strong>Overall Emission Count:</strong> Shows the total GHG emission count (in billion tonnes) for the selected country. The overall emission total represents the selected gas type from the main dashboard.</li>
+                    <li><strong>Country Marquee Ranking:</strong> Under the Dashboard title shows a marquee displaying the list of contributing countries and their respective ranks based on total GHG Emissions count and its percentage over the overall sum of GHG Emission total.</li>
                 </ul>
-                <h4>Filtering Data:</h4>
-                <p>Use the sector and subsector tree on the right side to filter emissions data by specific sectors. Clicking on a sector or subsector will update the other visualizations to reflect the selected category.</p>
-                <h3>Page 2: Emissions by Source</h3>
-                <h4>Source Emission Count:</h4>
-                <p>Displays total GHG emissions by different gas type.</p>
-                <h4>Source Emission Trend:</h4>
-                <p>A line chart showing the trend of emissions by source over the years.</p>
-                <h4>Emission Contribution by Source:</h4>
-                <p>A table illustrating the contribution of each source to the total GHG emissions.</p>
-                <h3>How to Use Page 2</h3>
-                <h4>Analyzing Source Emissions:</h4>
+            
+                <h3>Visualization Section:</h3>
+                <h4>Map:</h4>
                 <ul>
-                    <li>Use the source emission count to understand the major contributors to GHG emissions.</li>
-                    <li>Observe the emission trend line chart to see how emissions from different sources have changed over time.</li>
-                    <li>Compare contributions from each source using the table for insights into which sources have the highest emissions.</li>
+                    <li>A map visual showing the selected Country of Focus.</li>
                 </ul>
-                <h3>Final Notes:</h3>
-                <p>This dashboard is designed to provide an interactive experience for users looking to analyze GHG emissions data. If you have any questions or need further assistance, feel free to reach out.</p>
-            </div>
+                <h4>Emission by Sector Year-on-Year:</h4>
+                <ul>
+                    <li>This visual shows the users a heat map table, listing the 10 sectors in the country with their emission values. Color indicators from green (lower value) to red (highest value), represents the GHG emission received from each sector year on year.</li>
+                </ul>
+                <h4>Top 5 GHG Emission Sources:</h4>
+                <ul>
+                    <li>Listing the top 5 sources and their total GHG Emission count.</li>
+                </ul>
+                <h4>Country GHG Emission Yearly Trend:</h4>
+                <ul>
+                    <li>A line chart visual that shows the users the yearly GHG emission trend for the selected country of focus.</li>
+                    <li>Hovering in each yearly data points will show a tooltip of the top 5 sectors in the selected country contributing to GHG accumulation.</li>
+                </ul>
+                <h4>Count of Facilities per Sector:</h4>
+                <ul>
+                    <li>Distinct count of Facilities in each sector producing Greenhouse Gas.</li>
+                </ul>
+            
+                <div class="section-title">
+                    <h2>Trend and Forecast of Global Greenhouse Gas Emission Dashboard</h2>
+                </div>
+            
+                <h3>Header Section:</h3>
+                <ul>
+                    <li><strong>Dashboard Title:</strong> Displays the title "Trend and Forecast of Global Greenhouse Gas Emissions".</li>
+                    <li><strong>Gas Type Toggle:</strong> Allows users to switch between different GHG types such as CH4 (Methane), CO2 (Carbon Dioxide), N2O (Nitrous Oxide), CO2e_20YR (GWP), and CO2e_100YR (GWP).</li>
+                    <li><strong>Sector Drop Down List:</strong> Allows users to select for a specific sector of focus.</li>
+                    <li><strong>Country Drop Down List:</strong> Allows users to select for a specific country of focus. Multiple selections allowed.</li>
+                </ul>
+            
+                <h3>Visualization Section:</h3>
+                <h4>Emission Trend & 10 Year Future Forecast:</h4>
+                <ul>
+                    <li>An Area Chart visual that shows the historical emission trend from 2015 until 2022, based on the selected filters.</li>
+                    <li>The forecasted values are based on the last 9 years of GHG Emissions recorded where besides the actual prediction, a lower and upper forecast values were also calculated.</li>
+                </ul>
+                <h4>Year-on-Year Emission by Sector:</h4>
+                <ul>
+                    <li>This visual shows the users a heat map table, listing the 10 sectors and their emission values. Color indicators from green (lower value) to red (highest value), represents the GHG emission received from each sector year on year.</li>
+                    <li>Heat map table updates based on the filter selection in this dashboard.</li>
+                </ul>
+                <h4>Count of Facilities by Sector:</h4>
+                <ul>
+                    <li>Distinct count of Facilities in each sector producing Greenhouse Gas.</li>
+                    <li>Facility total changes depending on the selected filters in this dashboard.</li>
+                </ul>
+                <h4>Year-on-Year Emission Growth Rate:</h4>
+                <ul>
+                    <li>An area chart visual where users will be able to gain insight on the yearly total emission growth rate from 2015 to 2022.</li>
+                    <li>Depending on the selected filter, users may be able to check the growth rate of GHG emission for specific sector and/or country.</li>
+                </ul>
+                <h4>Interactive GHG Emission Growth Rate Analysis (2015-2022):</h4>
+                <ul>
+                    <li>An interactive line chart visual that allows users to set a period range that would calculate the percentage growth rate value of the selected timeframe.</li>
+                    <li>Insights into the GHG emission growth will allow users to understand the extent of emission changes over the chosen period.</li>
+                </ul>
+                <h4>GHG Emission Total per Sub-Sector:</h4>
+                <ul>
+                    <li>Detailed breakdown of GHG emissions by sub-sector, providing a clear view of each sector’s contribution to overall emissions.</li>
+                    <li>Provides users a comparative analysis of sub-sector emissions, highlighting the highest and lowest emitters to identify key areas of improvement.</li>
+                </ul>            </div>
         </div>
 
         <!-- Scroll Up -->
