@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Results - CAPSTONE PROJECT</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Set width to 80% of the viewport */
+            max-width: 800px; /* Maximum width of the modal */
+            max-height: 80%;
+            overflow-y: auto; /* Scrollable if the content is too long */
+            font-size: 14px; /* Smaller font size */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .scroll-up {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            background-color: #555;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Make it circular */
+            display: none; /* Hidden by default */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .scroll-up:hover {
+            background-color: #333;
+        }
+
+        /* User Guide Style */
+        #howToUse {
+            font-size: 12px; /* Smaller font size */
+            margin-bottom: 10px; /* Space below the text */
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">CAPSTONE PROJECT</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">OVERVIEW</a></li>
+                <li><a href="methodology.html">METHODOLOGY</a></li>
+                <li><a href="dataexploration.html">DATA EXPLORATION</a></li>
+                <li class="active"><a href="results.html">RESULTS</a></li>
+                <li><a href="recommendations.html">RECOMMENDATIONS</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <section class="post">
+                <header class="major">
+                </header>
+                
+                <!-- Embedded Power BI Report -->
+                <iframe title="GHG_Emission_Dashboard_Final" width="100%" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiNDk3ODZmNTUtZWY4Zi00NzZhLTllYjEtOGFkY2ZjYTJkYjNjIiwidCI6ImY1MmYyMTgzLTlmNjctNGFkMi1iNjU2LTZmNzU0ZmUxOTZjYiIsImMiOjZ9&pageName=afa2d8e431277424fb7b" frameborder="0" allowFullScreen="true"></iframe>
+                
+                <!-- User Guide Button -->
+                <button id="howToUseBtn" class="action-button">User Guide</button>
+                <!-- Provide Feedback Button -->
+                <button id="provideFeedbackBtn" class="action-button">Provide Feedback</button>
+        
+            </section>
+
+        </div>
+
+        <!-- The Modal for User Guide -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>User Guide for Power BI Dashboard</h2>
+                <h2>Overview</h2>
+                <p>Welcome to the Sectoral Analysis and Forecast of Global Greenhouse Gas (GHG) Emissions Dashboard. This guide will help you navigate and utilize the features of the dashboard to explore and analyze GHG emissions data.</p>
+            
+                <div class="section-title">
+                    <h2>Main Dashboard</h2>
+                </div>
+            
+                <h3>Header Section:</h3>
+                <ul>
+                    <li><strong>Dashboard Title:</strong> Displays the title "Sectoral Analysis and Forecast of Global Greenhouse Gas (GHG) Emissions Dashboard".</li>
+                    <li><strong>Overall Emission Count:</strong> Shows the total GHG emission count (in billion tonnes) for the selected gas type.</li>
+                    <li><strong>Gas Type Toggle:</strong> Allows users to switch between different GHG types such as CH4 (Methane), CO2 (Carbon Dioxide), N2O (Nitrous Oxide), CO2e_20YR (GWP), and CO2e_100YR (GWP).</li>
+                    <li><strong>Gas Type Focus:</strong> Allows users to select specific gas type of focus (e.g. Co2, N2O, CH4, or Global Warming Potential (GWP) CO2e_100YR or CO2e_20YR).</li>
+                    <li><strong>Country Marquee Ranking:</strong> Under the Dashboard title shows a marquee displaying the list of contributing countries and their respective ranks based on total GHG Emissions count and its percentage over the overall sum of GHG Emission total.</li>
+                </ul>
+            
+                <h3>Visualization Section:</h3>
+                <h4>GHG Emission by Country:</h4>
+                <ul>
+                    <li>A world map visualization showing GHG emission counts by country. Larger red circles represent higher emissions.</li>
+                    <li>To view more details, users can drill through selected country emission bubble to switch over to ‘Country Specific Greenhouse Gas (GHG) Emission Dashboard.’ Details of this dashboard will be discussed in the following sections.</li>
+                </ul>
+            
+                <h4>Country Ranking by GHG Emission Contributions:</h4>
+                <ul>
+                    <li>A table listing all the countries with their respective total emissions and trends.</li>
+                    <li><strong>Columns:</strong>
+                        <ul>
+                            <li><strong>Country:</strong> Name of the country.</li>
+                            <li><strong>Total Emissions:</strong> Total GHG emissions (in billions).</li>
+                            <li><strong>Emission Trend:</strong> Visual representation of the emission trend over time.</li>
+                        </ul>
+                    </li>
+                </ul>
+            
+                <h4>Total Emission by Sector, Subsector:</h4>
+                <ul>
+                    <li>A hierarchical view displaying GHG emissions broken down by sector and subsector. Users can see detailed emissions for specific sectors like power, manufacturing, transportation, etc.</li>
+                    <li>More details are shown via tooltip on the highlighted sector such as yearly trend from 2015-2022, gas type selection, total emission count for the sector, and breakdown of subsector with their total emission count contribution.</li>
+                </ul>
+            
+                <h4>GHG Emission Trend and Forecast:</h4>
+                <ul>
+                    <li>A line chart displaying historical GHG emissions from 2015 to 2022 and the forecasted emissions count until 2030.</li>
+                    <li>Users can see the historical emission trend and the forecasted trajectory in the near future. Moreover, hovering on each of the yearly data points in the past will show insights of the Top 5 countries contributing to the increase of GHG into the atmosphere.</li>
+                    <li>A Trend&Forecast button (A graph with a question mark) on the top left corner of the visualization is available for users to switch over to the Trend & Forecast of Global Greenhouse Gas (GHG) Emissions Dashboard. More details on this dashboard will be highlighted in the next sections.</li>
+                </ul>
+            
+                <div class="section-title">
+                    <h2>Country Specific Greenhouse Gas (GHG) Emissions Dashboard</h2>
+                </div>
+            
+                <h3>Header Section:</h3>
+                <ul>
+                    <li><strong>Dashboard Title:</strong> Displays the title "Country Specific Greenhouse Gas (GHG) Emissions Dashboard". Accessible via drill through from the main dashboard, map visuals.</li>
+                    <li><strong>Country of Focus:</strong> A visual card that shows the selected country focus from the map visuals in the main dashboard.</li>
+                    <li><strong>Overall Emission Count:</strong> Shows the total GHG emission count (in billion tonnes) for the selected country. The overall emission total represents the selected gas type from the main dashboard.</li>
+                    <li><strong>Country Marquee Ranking:</strong> Under the Dashboard title shows a marquee displaying the list of contributing countries and their respective ranks based on total GHG Emissions count and its percentage over the overall sum of GHG Emission total.</li>
+                </ul>
+            
+                <h3>Visualization Section:</h3>
+                <h4>Map:</h4>
+                <ul>
+                    <li>A map visual showing the selected Country of Focus.</li>
+                </ul>
+                <h4>Emission by Sector Year-on-Year:</h4>
+                <ul>
+                    <li>This visual shows the users a heat map table, listing the 10 sectors in the country with their emission values. Color indicators from green (lower value) to red (highest value), represents the GHG emission received from each sector year on year.</li>
+                </ul>
+                <h4>Top 5 GHG Emission Sources:</h4>
+                <ul>
+                    <li>Listing the top 5 sources and their total GHG Emission count.</li>
+                </ul>
+                <h4>Country GHG Emission Yearly Trend:</h4>
+                <ul>
+                    <li>A line chart visual that shows the users the yearly GHG emission trend for the selected country of focus.</li>
+                    <li>Hovering in each yearly data points will show a tooltip of the top 5 sectors in the selected country contributing to GHG accumulation.</li>
+                </ul>
+                <h4>Count of Facilities per Sector:</h4>
+                <ul>
+                    <li>Distinct count of Facilities in each sector producing Greenhouse Gas.</li>
+                </ul>
+            
+                <div class="section-title">
+                    <h2>Trend and Forecast of Global Greenhouse Gas Emission Dashboard</h2>
+                </div>
+            
+                <h3>Header Section:</h3>
+                <ul>
+                    <li><strong>Dashboard Title:</strong> Displays the title "Trend and Forecast of Global Greenhouse Gas Emissions".</li>
+                    <li><strong>Gas Type Toggle:</strong> Allows users to switch between different GHG types such as CH4 (Methane), CO2 (Carbon Dioxide), N2O (Nitrous Oxide), CO2e_20YR (GWP), and CO2e_100YR (GWP).</li>
+                    <li><strong>Sector Drop Down List:</strong> Allows users to select for a specific sector of focus.</li>
+                    <li><strong>Country Drop Down List:</strong> Allows users to select for a specific country of focus. Multiple selections allowed.</li>
+                </ul>
+            
+                <h3>Visualization Section:</h3>
+                <h4>Emission Trend & 10 Year Future Forecast:</h4>
+                <ul>
+                    <li>An Area Chart visual that shows the historical emission trend from 2015 until 2022, based on the selected filters.</li>
+                    <li>The forecasted values are based on the last 9 years of GHG Emissions recorded where besides the actual prediction, a lower and upper forecast values were also calculated.</li>
+                </ul>
+                <h4>Year-on-Year Emission by Sector:</h4>
+                <ul>
+                    <li>This visual shows the users a heat map table, listing the 10 sectors and their emission values. Color indicators from green (lower value) to red (highest value), represents the GHG emission received from each sector year on year.</li>
+                    <li>Heat map table updates based on the filter selection in this dashboard.</li>
+                </ul>
+                <h4>Count of Facilities by Sector:</h4>
+                <ul>
+                    <li>Distinct count of Facilities in each sector producing Greenhouse Gas.</li>
+                    <li>Facility total changes depending on the selected filters in this dashboard.</li>
+                </ul>
+                <h4>Year-on-Year Emission Growth Rate:</h4>
+                <ul>
+                    <li>An area chart visual where users will be able to gain insight on the yearly total emission growth rate from 2015 to 2022.</li>
+                    <li>Depending on the selected filter, users may be able to check the growth rate of GHG emission for specific sector and/or country.</li>
+                </ul>
+                <h4>Interactive GHG Emission Growth Rate Analysis (2015-2022):</h4>
+                <ul>
+                    <li>An interactive line chart visual that allows users to set a period range that would calculate the percentage growth rate value of the selected timeframe.</li>
+                    <li>Insights into the GHG emission growth will allow users to understand the extent of emission changes over the chosen period.</li>
+                </ul>
+                <h4>GHG Emission Total per Sub-Sector:</h4>
+                <ul>
+                    <li>Detailed breakdown of GHG emissions by sub-sector, providing a clear view of each sector’s contribution to overall emissions.</li>
+                    <li>Provides users a comparative analysis of sub-sector emissions, highlighting the highest and lowest emitters to identify key areas of improvement.</li>
+                </ul>          
+                <!-- Content of the user guide here... -->
+
+            </div>
+        </div>
+
+        <!-- The Modal for Feedback Form -->
+                <div id="feedbackModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfnVD4dzYek17QaHykK29ID7fvT21p1SqCzA1mNfYHS5CJPQ/viewform?embedded=true" width="750" height="1550" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+        </div>
+
+        <!-- Scroll Up -->
+        <a href="#header" class="scroll-up"><i class="fas fa-arrow-up"></i></a>
+
+        <!-- Copyright -->
+        <div id="copyright">
+        </div>
+        
+    </div>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        $(document).ready(function() {
+            var scrollButton = $('.scroll-up');
+
+            // Show or hide the scroll button
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 20) {
+                    scrollButton.fadeIn();
+                } else {
+                    scrollButton.fadeOut();
+                }
+            });
+
+            // Scroll to top
+            scrollButton.click(function() {
+                $('html, body').animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+
+            // Get the modals
+            var modal = document.getElementById("myModal");
+            var feedbackModal = document.getElementById("feedbackModal");
+
+            // Get the button that opens the modals
+            var btn = document.getElementById("howToUseBtn");
+            var feedbackBtn = document.getElementById("provideFeedbackBtn");
+
+            // Get the <span> element that closes the modals
+            var span = document.getElementsByClassName("close")[0];
+            var feedbackSpan = document.getElementsByClassName("close")[1];
+
+            // When the user clicks the button, open the modals
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+            feedbackBtn.onclick = function() {
+                feedbackModal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modals
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            feedbackSpan.onclick = function() {
+                feedbackModal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modals, close them
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                if (event.target == feedbackModal) {
+                    feedbackModal.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
